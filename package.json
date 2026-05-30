@@ -2,7 +2,7 @@
   "name": "react-hook-tanstack-virtual",
   "packageManager": "yarn@4.15.0",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Rules-of-React respecting bindings for TanStack Virtual.",
   "author": "Xandor Schiefer <me@xandor.co.za>",
   "license": "MIT",
