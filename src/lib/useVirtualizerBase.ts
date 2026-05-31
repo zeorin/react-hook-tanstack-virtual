@@ -1,3 +1,5 @@
+import type { ReactVirtualizerOptions } from "@tanstack/react-virtual"
+import { Virtualizer, type VirtualizerOptions } from "@tanstack/virtual-core"
 import {
 	useCallback,
 	useInsertionEffect,
@@ -6,9 +8,6 @@ import {
 	useState,
 	useSyncExternalStore,
 } from "react"
-
-import type { ReactVirtualizerOptions } from "@tanstack/react-virtual"
-import { Virtualizer, type VirtualizerOptions } from "@tanstack/virtual-core"
 
 import type { IsEqual } from "../types"
 import { identity } from "./identity"
@@ -99,7 +98,7 @@ export const useVirtualizerBase = <
 		| {
 				hasValue: false
 				value: null
-			}
+		  }
 		| { hasValue: true; value: Selection }
 	>({
 		hasValue: false,
@@ -188,14 +187,14 @@ export const useVirtualizerBase = <
 
 	const subscribe = useMemo(
 		() =>
-			memoOptions.useFlushSync ?
-				(onVirtualizationChange: () => void) => {
-					listeners.add(onVirtualizationChange)
-					return () => {
-						listeners.delete(onVirtualizationChange)
+			memoOptions.useFlushSync
+				? (onVirtualizationChange: () => void) => {
+						listeners.add(onVirtualizationChange)
+						return () => {
+							listeners.delete(onVirtualizationChange)
+						}
 					}
-				}
-			: () => () => {},
+				: () => () => {},
 		[memoOptions, listeners],
 	)
 

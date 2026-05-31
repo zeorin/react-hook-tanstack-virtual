@@ -23,36 +23,36 @@ Our hooks create a `virtualizer` instance, and hook into its `onChange` handler 
 ### `useVirtualizer`
 
 ```typescript
-import { useVirtualizer } from 'react-hook-tanstack-virtual'
+import { useVirtualizer } from "react-hook-tanstack-virtual"
 
 const Component = () => {
 	// …
 
-	const {
-		totalSize,
-		virtualItems
-	} = useVirtualizer(options, (virtualizer) => ({
-		totalSize: virtualizer.totalSize,
-		virtualItems: virtualizer.virtualItems
-	}))
+	const { totalSize, virtualItems } = useVirtualizer(
+		options,
+		(virtualizer) => ({
+			totalSize: virtualizer.totalSize,
+			virtualItems: virtualizer.virtualItems,
+		}),
+	)
 }
 ```
 
 ### `useWindowVirtualizer`
 
 ```typescript
-import { useWindowVirtualizer } from 'react-hook-tanstack-virtual'
+import { useWindowVirtualizer } from "react-hook-tanstack-virtual"
 
 const Component = () => {
 	// …
 
-	const {
-		totalSize,
-		virtualItems
-	} = useWindowVirtualizer(options, (virtualizer) => ({
-		totalSize: virtualizer.totalSize,
-		virtualItems: virtualizer.virtualItems
-	}))
+	const { totalSize, virtualItems } = useWindowVirtualizer(
+		options,
+		(virtualizer) => ({
+			totalSize: virtualizer.totalSize,
+			virtualItems: virtualizer.virtualItems,
+		}),
+	)
 }
 ```
 

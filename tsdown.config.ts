@@ -1,9 +1,9 @@
-import { defineConfig } from 'tsdown'
+import { defineConfig } from "tsdown"
 
 export default defineConfig({
-	platform: 'neutral',
+	platform: "neutral",
 	dts: {
-		sourcemap: true
+		sourcemap: true,
 	},
 	exports: true,
 	format: ["esm", "cjs"],
@@ -11,8 +11,5 @@ export default defineConfig({
 	deps: {
 		neverBundle: [/^@tanstack\//],
 	},
-	entry: [
-		'src/index.ts',
-		{ '*': 'src/hooks/*.ts' }
-	]
+	entry: ["src/index.ts", { "*": "src/hooks/*.ts" }],
 })
