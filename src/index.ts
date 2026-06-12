@@ -1,6 +1,8 @@
 export * from "@tanstack/virtual-core"
 export * from "@tanstack/react-virtual"
 
+export type { ReactVirtualizerOptions } from './lib/useVirtualizerBase'
+
 export { useVirtualizer, useVirtualizerʹ } from "./hooks/useVirtualizer"
 export {
 	useWindowVirtualizer,
