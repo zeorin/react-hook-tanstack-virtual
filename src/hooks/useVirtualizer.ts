@@ -1,4 +1,3 @@
-import type { ReactVirtualizerOptions } from "@tanstack/react-virtual"
 import {
 	elementScroll,
 	observeElementOffset,
@@ -9,14 +8,16 @@ import {
 import {
 	useVirtualizerBase,
 	type Selector,
-	type VirtualizerSnapshot,
+	type ReactVirtualizerSnapshot,
+	type ReactVirtualizerOptions,
 } from "../lib/useVirtualizerBase"
+
 import type { IsEqual } from "../types"
 
 export const useVirtualizer = <
 	TScrollElement extends Element,
 	TItemElement extends Element,
-	Selection = VirtualizerSnapshot<TScrollElement, TItemElement>,
+	Selection = ReactVirtualizerSnapshot<TScrollElement, TItemElement>,
 >(
 	options: PartialKeys<
 		ReactVirtualizerOptions<TScrollElement, TItemElement>,
@@ -45,7 +46,7 @@ const virtualizerHookʹ =
 			"observeElementRect" | "observeElementOffset" | "scrollToFn"
 		>,
 	) =>
-	<Selection = VirtualizerSnapshot<TScrollElement, TItemElement>>(
+	<Selection = ReactVirtualizerSnapshot<TScrollElement, TItemElement>>(
 		selector?: Selector<TScrollElement, TItemElement, Selection> | undefined,
 		isEqual?: IsEqual<NoInfer<Selection>> | undefined,
 	): Selection =>

@@ -1,25 +1,27 @@
-import type { ReactVirtualizerOptions } from "@tanstack/react-virtual"
 import {
-	type PartialKeys,
+	windowScroll,
 	observeWindowOffset,
 	observeWindowRect,
-	windowScroll,
+	type PartialKeys,
 } from "@tanstack/virtual-core"
 
 import {
-	type Selector,
-	type VirtualizerSnapshot,
 	useVirtualizerBase,
+	type Selector,
+	type ReactVirtualizerSnapshot,
+	type ReactVirtualizerOptions,
 } from "../lib/useVirtualizerBase"
+
 import type { IsEqual } from "../types"
 
 const getWindow = () => (typeof document !== "undefined" ? window : null)
+
 const windowOffset = () =>
 	typeof document !== "undefined" ? window.scrollY : 0
 
 export const useWindowVirtualizer = <
 	TItemElement extends Element,
-	Selection = VirtualizerSnapshot<Window, TItemElement>,
+	Selection = ReactVirtualizerSnapshot<Window, TItemElement>,
 >(
 	options: PartialKeys<
 		ReactVirtualizerOptions<Window, TItemElement>,
@@ -53,7 +55,7 @@ const windowVirtualizerHookʹ =
 			"observeElementRect" | "observeElementOffset" | "scrollToFn"
 		>,
 	) =>
-	<Selection = VirtualizerSnapshot<Window, TItemElement>>(
+	<Selection = ReactVirtualizerSnapshot<Window, TItemElement>>(
 		selector?: Selector<Window, TItemElement, Selection> | undefined,
 		isEqual?: IsEqual<NoInfer<Selection>> | undefined,
 	): Selection =>
