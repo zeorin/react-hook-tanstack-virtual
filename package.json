@@ -1,6 +1,6 @@
 {
 	"name": "react-hook-tanstack-virtual",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Rules-of-React respecting bindings for TanStack Virtual.",
 	"homepage": "https://github.com/zeorin/react-hook-tanstack-virtual/?tab=readme-ov-file#readme-ov-file",
 	"bugs": {
